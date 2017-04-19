@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>数钱大比拼</title>
+		<link rel="stylesheet" type="text/css" href="css/animate.css" />
+		<link rel="stylesheet" type="text/css" href="css/game.css" />
+	</head>
+
+	<body>
+		<!--预加载界面-->
+		<div class="loading_wrap">
+			<div class="loading">
+				0%
+			</div>
+		</div>
+		<!--项目的第一个界面-->
+		<div id="page1">
+			<!--挑战-->
+			<img src="img/tiaozhan.png" class="challenge animated bounceIn" />
+			<!--数钱速度-->
+			<img src="img/yingqu.png" class="winSlogon animated wobble" alt="" />
+			<!--开始按钮-->
+			<img src="img/start_game.png" class="start animated pulse infinite" />
+			<!--引导✋-->
+			<img src="img/shou.png" class="hand animated fadeOut infinite" />
+			<!--底部菜单背景-->
+			<img src="img/p1_btns_wrap.png" class="btn_bg" />
+			<!--数钱榜-->
+			<img src="img/ranking.png" class="rank">
+			<!--规则-->
+			<img src="img/activity_rule.png" class="rule" />
+			<!--奖品-->
+			<img src="img/prize.png" class="prize" />
+			<!--奖券说明-->
+			<img src="img/shiyong.png" class="explain" />
+		</div>
+		<!--第二界面-->
+		<div id="page2">
+			<!--对话框-->
+			<img src="img/p2_kuang.png" class="outLine" />
+			<!--对话框内容-->
+			<img src="img/p2_txt1.png" class="textTalk" />
+			<!--设置数钱的张数-->
+			<div id="time">
+				<span class="count_num">0</span>
+				<span class="count_num">0</span>
+				<span class="count_num">0</span>
+				<span class="time_clock">10</span>
+			</div>
+			<div id="money_wrap">
+				<!--钱-->
+				<img src="img/p2_qian.jpg" class="money" />
+
+			</div>
+			<!--砖块-->
+			<img src="img/p2_zhuan.png" class="brick">
+			<!--数钱的手-->
+			<img src="img/p2_shou.png" class="hand-money animated fadeOutUp infinite" />
+		</div>
+
+		<!--界面三-->
+		<div id="page3">
+			<!--恭喜 图片-->
+			<img src="img/p3_acquire.png" class="acquire" />
+			<!--获得的钱数-->
+			<p id="result_money">¥0</p>
+			<!--战果-->
+			<p id="result_eva">没有办法!你已超神了!</p>
+			<!--设置最好成绩和当前排名-->
+			<div id="best_wrap">
+				我的辉煌战绩:¥<span id="best_sum">666</span>,当前排名:<span id="best_rank">66名</span> 
+			</div>
+			<!--再来一次-->
+			<img src="img/p3_again.png" class="again" />
+			<!--分享-->
+			<img src="img/p3_share_btn.png" alt="" class="share" />
+			<!--底部菜单背景-->
+			<img src="img/p1_btns_wrap.png" class="btn_bg" />
+			<!--数钱榜-->
+			<img src="img/ranking.png" class="rank">
+			<!--规则-->
+			<img src="img/activity_rule.png" class="rule" />
+			<!--奖品-->
+			<img src="img/prize.png" class="prize" />
+			<!--奖券说明-->
+			<img src="img/shiyong.png" class="explain" />
+		</div>
+
+		<!--填写个人资料-->
+		<div class="laert_wrap user_alert">
+			<!--关闭按钮-->
+			<img src="img/close.png" class="close" />
+			<!--提交信息-->
+			<form id="form_alert" action="" method="post">
+				<input type="text" placeholder="姓名" class="user_name" />
+				<input type="text" placeholder="电话" class="user_phone" />
+				<input type="text" placeholder="地址" class="user_address" />
+				<input type="button" class="submit_btn" />
+			</form>
+		</div>
+		<!--数钱榜提示框-->
+		<div class="laert_wrap rank_alert">
+			<!--关闭按钮-->
+			<img src="img/close.png" class="close" />
+			<!--排名模块-->
+			<div class="rank_wrap">
+				<ul>
+					<li>
+						<span class="rank_grade"></span>
+						<img src="img/shizhong.png" class="rank_clock" />
+						<span class="name">暂无</span>
+						<span class="score">0分</span>
+					</li>
+					<li>
+						<span class="rank_grade"></span>
+						<img src="img/shizhong.png" class="rank_clock" />
+						<span class="name">暂无</span>
+						<span class="score">0分</span>
+					</li>
+					<li>
+						<span class="rank_grade"></span>
+						<img src="img/shizhong.png" class="rank_clock" />
+						<span class="name">暂无</span>
+						<span class="score">0分</span>
+					</li>
+					<li>
+						<span class="rank_grade">4</span>
+						<img src="img/shizhong.png" class="rank_clock" />
+						<span class="name">暂无</span>
+						<span class="score">0分</span>
+					</li>
+					<li>
+						<span class="rank_grade">5</span>
+						<img src="img/shizhong.png" class="rank_clock" />
+						<span class="name">暂无</span>
+						<span class="score">0分</span>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+		<!--活动规则提示框-->
+		<div class="laert_wrap rule_alert">
+			<!--关闭按钮-->
+			<img src="img/close.png" class="close" />
+			<div class="content_wrap">
+				<h2>活动规则</h2>
+				<p>
+					1、每人有多次游戏机会，但成绩只能提交一次，且提交之后不能更改！<br /> 
+					2、提交成绩时要提供姓名及手机号码作为兑奖凭证，因用户本人未在规定时间内提供正确的手机号码造成的奖品损失，由用户个人承担。
+					<br /> 3、活动时间为2016年5月11日-5月19日24:00，活动结束后将在“雾灵山庄”微信公布中奖名单。
+					<br /> 4、获奖规则：系统将根据大家提交的成绩，按照由多到少的规则进行排行，排名第1的网友将获得一等奖，排名第2-第21位的网友将分获二等奖，以此类推。
+					<br/> 5、奖品的发放：活动结束后，将由工作人员与您取得联系，并将相应的卡券编号发送到您提供的手机号码上
+				</p>
+			</div>
+		</div>
+		<!--活动奖品-->
+		<div class="laert_wrap prize_alert">
+			<!--关闭按钮-->
+			<img src="img/close.png" class="close" />
+			<div class="content_wrap">
+				<h2>活动奖品</h2>
+				<p>
+					一等奖1人：价值1488元7号楼1晚豪华标间免费房券1张，并可享康体项目3折优惠；<br />
+					 二等奖20人：100元订房代金券每人1张，并可享康体项目4折优惠；
+					<br /> 三等奖50人：50元订房代金券每人1张，并可享康体项目5折优惠。
+					<br /> 奖品的有效期：2016年5月20日至6月15日（周五、周六及法定节假日不可用）
+				</p>
+			</div>
+		</div>
+		<!--使用说明-->
+		<div class="laert_wrap explain_alert">
+			<!--关闭按钮-->
+			<img src="img/close.png" class="close" />
+			<div class="content_wrap">
+				<h2>奖券使用说明</h2>
+				<p>
+					1、每人有多次游戏机会，但成绩只能提交一次，且提交之后不能更改！<br /> 2、提交成绩时要提供姓名及手机号码作为兑奖凭证，因用户本人未在规定时间内提供正确的手机号码造成的奖品损失，由用户个人承担。
+					<br /> 3、活动时间为2016年5月11日-5月19日24:00，活动结束后将在“雾灵山庄”微信公布中奖名单。
+					<br /> 4、获奖规则：系统将根据大家提交的成绩，按照由多到少的规则进行排行，排名第1的网友将获得一等奖，排名第2-第21位的网友将分获二等奖，以此类推。
+					<br /> 5、奖品的发放：活动结束后，将由工作人员与您取得联系，并将相应的卡券编号发送到您提供的手机号码上。
+					<br />
+				</p>
+			</div>
+		</div>
+		<!--分享提示框-->
+		<div class="share_laert ">
+			<img src="img/p3_share.png" class="share_btn" />
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/touch.min.js"></script>
+	<script type="text/javascript" src="js/game.js"></script>
+
+</html>

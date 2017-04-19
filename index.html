@@ -1,197 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-	<title>index</title>
-	<link rel="stylesheet" href="css/index.css">
-	<script src="js/jquery-3.1.1.js"></script>
-	<script src="js/index.js"></script>
-
-
-
-	
+  <meta charset="utf-8">
+  <meta content="yes" name="apple-mobile-web-app-capable"/>
+  <meta content="yes" name="apple-touch-fullscreen"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
+  <title>边锋数钱大作战</title>
+  <link rel="stylesheet" href="c/base.css">
+  <link rel="stylesheet" href="c/loading.css">
+  <link rel="stylesheet" href="c/index.css">
+  <script type="text/javascript">
+    window.addEventListener('touchmove', function(e) {
+      e.preventDefault();
+    }, false);
+  </script>
 </head>
-
 <body>
-	<div id="wrap" class="">
-		<img src="img/pt1.png" alt="" class="pt1">
-		<img src="img/pt2.png" alt="" class="pt2">
-		<img src="img/beginbtn.png" alt="" class="begin-btn">
-		<img src="img/hand.png" alt="" class="hand">
-		<ul class="bottom-btn">
-			<li id="0"></li>
-			<li id="1"></li>
-			<li id="2"></li>
-			<li id="3"></li>
-		</ul>
+  <div class="wrap" id="wrap">
+    <!-- 进度条开始 -->
+    <div class="loader" id="loader">
+      <div class="loading-container">
+        <div class="logo-center"></div>
+        <div class="logo-point">
+          <div class="logo-round round-top"></div>
+          <div class="logo-round round-bottom"></div>
+          <div class="logo-round round-left"></div>
+          <div class="logo-round round-right"></div>
+        </div>
+      </div>
+      <p class="loading-tips">玩命加载中...0%</p>
+      <div class="loading-finish">
+        <div class="bf-logo"></div>
+        <div class="bf-slogan"></div>
+      </div>
+      <p class="bottom-tips">边锋出品</p>
+    </div>
+    <!-- 进度条开始 end -->
+    <!-- 数钱层 -->
+    <div class="floor2" id="floor2">
+      <div id="back">
+        <div class="drop-money drop1"><div class="money-small"></div></div>
+        <div class="drop-money drop2"><div class="money-small"></div></div>
+        <div class="drop-money drop3"><div class="money-small"></div></div>
+        <div class="drop-money drop4"><div class="money-small"></div></div>
+        <div class="drop-money drop5"><div class="money-small"></div></div>
+        <div class="drop-money drop6"><div class="money-small"></div></div>
+      </div>
+      <div class="cal" style="z-index:20">
+        <p class="money-num" id="score">0</p>
+        <p class="time"><span id="time">15</span>秒</p>
+      </div>
+      <canvas id="mc" width="500" height="300" style="position:absolute;z-index:15">
+      抱歉，您的浏览器不支持该游戏！
+      </canvas>
+      <img id="money" class="money-big" src="i/money-bg.jpg"></img>
+      <div class="hand" id="hand2"></div>
+    </div>
+    <!-- 数钱层 end -->
+  </div>
+  <!-- 弹窗层 -->
+  <!-- 弹框1 -->
+  <div class="mask" id="mask"></div>
+  <div class="pop-area" id="pop">
+    <!-- 小红窗 -->
+    <div class="pop">
+      <span class="close" id="btnClose"></span>
+      <div class="pop-main">
+        <p class="shu">恭喜土豪，您数到了<br/>
+        </p>
+        <p class="shu" style="margin-top: 50px;">
+          <span class="yellow" id="result">0</span>元
+        </p>
+      </div>
+    </div>
+    <!-- 按钮区 -->
+    <div class="btn-area">
+      <a href="javascript:;" class="btn yellow-btn" id="btnRestart">再玩一次</a>
+      <a href="javascript:;" class="btn red-btn" id="btnShare">炫耀战绩</a>
+    </div>
+  </div>
+  <!-- 弹窗层 end -->
+  <!-- 分享层 -->
 
-		<div class="li-btn bottom-box hide">
-			<img src="img/close.png" alt="" class="close">
-			<ul class="box1">
-				<li><img src="img/bang.png" alt=""></li>
-				<li> <span>1</span><span class="rank-name">聪明的小熊</span><span class="rank-score">800</span> </li>
-				<li> <span>2</span><span class="rank-name">聪明的小熊</span><span class="rank-score">800</span> </li>
-				<li> <span>3</span><span class="rank-name">聪明的小熊</span><span class="rank-score">800</span> </li>
-				<li> <span>4</span><span class="rank-name">聪明的小熊</span><span class="rank-score">800</span> </li>
-				<li> <span>5</span><span class="rank-name">聪明的小熊</span><span class="rank-score">800</span> </li>
-			</ul>
-		</div>
-		<div class="li-btn bottom-box hide">
-			<img src="img/close.png" alt="" class="close">
-			<div class="box2">
-				<h2>活动规则</h2>
-				<p>1、每人有多次游戏机会，但成绩只能提交一次，且提交之后不能更改！</p>
-				<p>2、提交成绩时要提供姓名及手机号码作为兑奖凭证，因用户本人未在规定时间内提供正确的手机号码造成的奖品损失，由用户个人承担。</p>
-				<p>3、活动时间为2016年5月11日-5月19日24:00，活动结束后将在“雾灵山庄”微信公布中奖名单。</p>
-				<p>4、获奖规则：系统将根据大家提交的成绩，按照由多到少的规则进行排行，排名第1的网友将获得一等奖，排名第2-第21位的网友将分获二等奖，以此类推。</p>
-				<p>5、奖品的发放：活动结束后，将由工作人员与您取得联系，并将相应的卡券编号发送到您提供的手机号码上。</p>
-			</div>
-		</div>
-		<div class="li-btn bottom-box hide">
-			<img src="img/close.png" alt="" class="close">
-			<div class="box3">
-				<h2>活动奖品</h2>
-				<p>一等奖1人：价值1488元7号楼1晚豪华标间免费房券1张，并可享康体项目3折优惠；</p>
-				<p>二等奖20人：100元订房代金券每人1张，并可享康体项目4折优惠；</p>
-				<p>三等奖50人：50元订房代金券每人1张，并可享康体项目5折优惠。</p>
-				<p>奖品的有效期：2016年5月20日至6月15日</p>
-				<p>（周五、周六及法定节假日不可用）</p>
-			</div>
-		</div>
-		<div class="li-btn bottom-box hide">
-			<img src="img/close.png" alt="" class="close">
-			<div class="box2">
-				<h2>奖券使用说明</h2>
-				<p>1、奖品的使用：请务必至少提前一周致电010-81027788或81027799进行预约，并于入住时向前台服务人员出示您手机上收到的卡券编号即可使用（需同时验证获奖人姓名与手机号码）。</p>
-				<p>2、代金券仅适用于线下门市价入住客房消费使用，不适用于通过携程或微信等其他线上渠道预定使用。</p>
-				<p>3、免费房安排的房间将视当时酒店排房情况而定，如您所预约的时段预订已满，将与您协商调整入住时间。</p>
-				<p>4、免费房券及代金券不得用于除订房外其他产品消费，不得与酒店其他优惠折扣或礼券同时使用，且不予退换、兑换现金或找赎。</p>
-				<p>5、对于恶意刷奖者和作弊者，主办方有权取消其兑奖资格。</p>
-			</div>
-		</div>
-		<div id="startBox" class="li-btn hide">
-			<img src="img/close.png" alt="" class="close">
-			<div class="startBox">
-				<img src="img/userMsg.png" alt="" class="sb-title">
-				<p>个人信息将作为领奖依据</p>
-				<p>请认真填写喔</p>
-				<form>
-					<input type="text" placeholder="姓名" class="username" required><br>
-					<input type="number" pattern="/\d{11,11}/" placeholder="电话" class="phone" required><br>
-					<input type="button" value="提交并开始游戏" class="startbtn">
-				</form>
-			</div>
-		</div>
-	</div>
-
-
-	<!-- 游戏开始玩的界面 -->
-	<div id="running" class="hide">
-		<div class="running-text">
-			<img src="img/rtext1.png" alt="">
-			<img src="img/rtext2.png" alt="" class="hide">
-			<img src="img/rtext3.png" alt="" class="hide">
-		</div>
-		<ul class="score-time">
-			<li>0</li>
-			<li>0</li>
-			<li>0</li>
-			<li>60</li>
-		</ul>
-		<div class="money">
-			<img src="img/money.png" alt="">
-			<img src="img/money.png" alt="">
-			<img src="img/money.png" alt="">
-			<img src="img/money.png" alt="">
-			<img src="img/money.png" alt="">
-			<img src="img/money.png" alt="">
-			<img src="img/money.png" alt="">
-			<img src="img/money.png" alt="">
-			<img src="img/money.png" alt="">
-			<img src="img/money.png" alt="">
-			<img src="img/money.png" alt="">
-			<img src="img/money.png" alt="">
-			<img src="img/money.png" alt="">
-			<img src="img/money.png" alt="">
-			<img src="img/money.png" alt="">
-			<div></div>
-		</div>
-		<img src="img/rhand.png" alt="" class="running-hand">
-		<img src="img/bottom.png" alt="" class="bottom">
-	</div>
-	<!-- 结果界面 -->
-	<div id="result" class="hide">
-		
-		<p class="resilt-money">￥24</p>
-		<p>你太客气了，这不是你的挑战极限吧</p>
-		<p>我的辉煌战绩：￥<span class="max-money"></span> 当前排名<span class="rank"></span>位</p>
-		<div class="result-btns">
-			<img src="img/again.png" alt="" class="again"><img src="img/share.png" alt="" class="share-btn">
-		</div>
-		<ul class="bottom-btn">
-			<li id="4"></li>
-			<li id="5"></li>
-			<li id="6"></li>
-			<li id="7"></li>
-		</ul>
-
-
-
-
-
-
-
-		<div class="li-btn bottom-box hide">
-			<img src="img/close.png" alt="" class="close">
-			<ul class="box1">
-				<li><img src="img/bang.png" alt=""></li>
-				<li> <span>1</span><span class="rank-name">聪明的小熊</span><span class="rank-score">800</span> </li>
-				<li> <span>2</span><span class="rank-name">聪明的小熊</span><span class="rank-score">800</span> </li>
-				<li> <span>3</span><span class="rank-name">聪明的小熊</span><span class="rank-score">800</span> </li>
-				<li> <span>4</span><span class="rank-name">聪明的小熊</span><span class="rank-score">800</span> </li>
-				<li> <span>5</span><span class="rank-name">聪明的小熊</span><span class="rank-score">800</span> </li>
-			</ul>
-		</div>
-		<div class="li-btn bottom-box hide">
-			<img src="img/close.png" alt="" class="close">
-			<div class="box2">
-				<h2>活动规则</h2>
-				<p>1、每人有多次游戏机会，但成绩只能提交一次，且提交之后不能更改！</p>
-				<p>2、提交成绩时要提供姓名及手机号码作为兑奖凭证，因用户本人未在规定时间内提供正确的手机号码造成的奖品损失，由用户个人承担。</p>
-				<p>3、活动时间为2016年5月11日-5月19日24:00，活动结束后将在“雾灵山庄”微信公布中奖名单。</p>
-				<p>4、获奖规则：系统将根据大家提交的成绩，按照由多到少的规则进行排行，排名第1的网友将获得一等奖，排名第2-第21位的网友将分获二等奖，以此类推。</p>
-				<p>5、奖品的发放：活动结束后，将由工作人员与您取得联系，并将相应的卡券编号发送到您提供的手机号码上。</p>
-			</div>
-		</div>
-		<div class="li-btn bottom-box hide">
-			<img src="img/close.png" alt="" class="close">
-			<div class="box3">
-				<h2>活动奖品</h2>
-				<p>一等奖1人：价值1488元7号楼1晚豪华标间免费房券1张，并可享康体项目3折优惠；</p>
-				<p>二等奖20人：100元订房代金券每人1张，并可享康体项目4折优惠；</p>
-				<p>三等奖50人：50元订房代金券每人1张，并可享康体项目5折优惠。</p>
-				<p>奖品的有效期：2016年5月20日至6月15日</p>
-				<p>（周五、周六及法定节假日不可用）</p>
-			</div>
-		</div>
-		<div class="li-btn bottom-box hide">
-			<img src="img/close.png" alt="" class="close">
-			<div class="box2">
-				<h2>奖券使用说明</h2>
-				<p>1、奖品的使用：请务必至少提前一周致电010-81027788或81027799进行预约，并于入住时向前台服务人员出示您手机上收到的卡券编号即可使用（需同时验证获奖人姓名与手机号码）。</p>
-				<p>2、代金券仅适用于线下门市价入住客房消费使用，不适用于通过携程或微信等其他线上渠道预定使用。</p>
-				<p>3、免费房安排的房间将视当时酒店排房情况而定，如您所预约的时段预订已满，将与您协商调整入住时间。</p>
-				<p>4、免费房券及代金券不得用于除订房外其他产品消费，不得与酒店其他优惠折扣或礼券同时使用，且不予退换、兑换现金或找赎。</p>
-				<p>5、对于恶意刷奖者和作弊者，主办方有权取消其兑奖资格。</p>
-			</div>
-		</div>
-
-		<div class="share li-btn hide">
-			<img src="img/sharetext.png" alt="">
-		</div>
-	</div>
+  <div class="mask" id="share" style="z-index:100;opacity:.85">
+    <div class="share"></div>
+  </div>
+  <audio id="audio1" src="res/count.mp3" preload="auto"></audio>
+  <audio id="audio2" src="res/count.mp3" preload="auto"></audio>
+  <audio id="audio3" src="res/count.mp3" preload="auto"></audio>
+  <audio id="audio4" src="res/count.mp3" preload="auto"></audio>
+  <script>
+    window.oPageConfig = {
+      'aImgItems':[
+        'close.png'
+      , 'clock.png'
+      , 'f1-p.png'
+      , 'money-drop.png'
+      , 'popbg.jpg'
+      , 'f1bg.jpg'
+      , 'hand.png'
+      , 'hand2.png'
+      , 'share.png'
+      , 'money.jpg'
+      , 'f1-money.png'
+      , 'money-bg.jpg'
+      , '../images/f1-main.png'
+      ]
+    , 'oWechat': {
+        'img': 'images/f1-main.png'
+      , 'title': '边锋数钱大作战'
+      , 'desc': ''
+      }
+    , 'sPlatform': '边锋数钱游戏'
+    , 'sSoundSrc': 'http://html5.qpdiy.com/games/count_money/gametea/res/count.mp3'
+    , 'sPrefix': 'i/'
+    }
+  </script>
+  <script src="j/ori-wechat.js" ></script>
+  <script src="j/preload.js"></script>
+  <script src="j/oritent.js"></script>
+  <script src="j/game.js" ></script>
+  <script src="j/index.js" ></script>
 </body>
-
 </html>

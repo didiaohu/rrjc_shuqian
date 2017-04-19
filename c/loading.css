@@ -1,0 +1,158 @@
+/* ==========================================================
+ * v20150311
+ * ==========================================================
+ * Copyright shihua
+ *
+ * 加载模块样式
+ * ========================================================== */
+.loader{
+  position: absolute;
+  z-index: 100;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  -webkit-transition: opacity .5s 2s;
+}
+.logo-center{
+  margin-left: -32px;
+  margin-top: -27px;
+  width: 64px;
+  height: 53px;
+  background: url(../i/loading/logo-center.png) no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+}
+.logo-round{
+  width: 16px;
+  height: 16px;
+  background: #78bc27;
+  border-radius: 50%;
+  position: absolute;
+  -webkit-transition:all .2s .1s linear;
+  -webkit-animation: none;
+}
+.round-top{
+  margin-left: -8px;
+  margin-top: -40px;
+}
+.round-bottom{
+  margin-left: -8px;
+  margin-top: 24px;
+}
+.round-left{
+  margin-left: -50px;
+  margin-top: -8px;
+}
+.round-right{
+  margin-left: 34px;
+  margin-top: -8px;
+}
+.active.round-top{
+  margin-top: -66px;
+  -webkit-transition:all .3s ease-in;
+  -webkit-transform-origin: 50% 66px;
+  -webkit-animation: go-round 2s .4s linear infinite;
+}
+.active.round-bottom{
+  margin-top: 50px;
+  background: #fdd600;
+  -webkit-transition:all .3s ease-in;
+  -webkit-transform-origin: 50% -50px;
+  -webkit-animation: go-round 2s .4s linear infinite;
+}
+.active.round-left{
+  margin-left: -66px;
+  background: #db5d00;
+  -webkit-transition:all .3s ease-in;
+  -webkit-transform-origin: 66px 50%;
+  -webkit-animation: go-round 2s .4s linear infinite;
+}
+.active.round-right{
+  margin-left: 50px;
+  background: #5392c8;
+  -webkit-transition:all .3s ease-in;
+  -webkit-transform-origin: -50px 50%;
+  -webkit-animation: go-round 2s .4s linear infinite;
+}
+.loading-container {
+  position: absolute;
+  left: 50%;
+  top:40%;
+  opacity: 0;
+  z-index: 10;
+  -webkit-transition:all .3s ease-in;
+}
+.loading-container.finish {
+  -webkit-transform-origin: -168px 50%;
+  -webkit-transition:all .3s ease-in;
+  -webkit-transform: scale(.6);
+}
+.loading-tips{
+  color: #747a7e;
+  font-size: 14px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-top: 75px;
+  width: 200px;
+  text-align: center;
+  margin-left: -100px;
+  opacity: 0;
+  -webkit-transition: opacity .3s .4s ease-in;
+}
+.bf-logo{
+  margin-left: -32px;
+  margin-top: -23px;
+  width: 88px;
+  height: 47px;
+  background: url(../i/loading/bf-logo.png) no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+}
+.bf-slogan{
+  margin-left: 60px;
+  margin-top: -35px;
+  width: 0;
+  height: 35px;
+  background: url(../i/loading/bf-slogan.png) no-repeat;
+  background-size: 70px 35px;
+  position: absolute;
+}
+.loading-finish{
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  top:40%;
+}
+.finish{
+  -webkit-transition: all .5s ease-in;
+  opacity: 1
+}
+.finish .bf-slogan{
+  width: 70px;
+  -webkit-transition: all .3s .6s ease-in;
+}
+.bottom-tips{
+  color: #747a7e;
+  font-size: 16px;
+  line-height: 20px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  width: 200px;
+  text-align: center;
+  margin-left: -100px;
+}
+.loader.finish{
+  -webkit-transform: scale(0);
+  -webkit-transition: all .5s 1s ease-in;
+}
+@-webkit-keyframes go-round {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}

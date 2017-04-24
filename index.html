@@ -1,127 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta content="yes" name="apple-mobile-web-app-capable"/>
-  <meta content="yes" name="apple-touch-fullscreen"/>
-  <meta content="telephone=no" name="format-detection"/>
-  <meta content="black" name="apple-mobile-web-app-status-bar-style">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
-  <title>边锋数钱大作战</title>
-  <link rel="stylesheet" href="c/base.css">
-  <link rel="stylesheet" href="c/loading.css">
-  <link rel="stylesheet" href="c/index.css">
-  <script type="text/javascript">
-    window.addEventListener('touchmove', function(e) {
-      e.preventDefault();
-    }, false);
-  </script>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<title>Document</title>
+	<style type="text/css">
+		#mylist{
+			overflow:hidden;
+		}
+	</style>
 </head>
 <body>
-  <div class="wrap" id="wrap">
-    <!-- 进度条开始 -->
-    <div class="loader" id="loader">
-      <div class="loading-container">
-        <div class="logo-center"></div>
-        <div class="logo-point">
-          <div class="logo-round round-top"></div>
-          <div class="logo-round round-bottom"></div>
-          <div class="logo-round round-left"></div>
-          <div class="logo-round round-right"></div>
-        </div>
-      </div>
-      <p class="loading-tips">玩命加载中...0%</p>
-      <div class="loading-finish">
-        <div class="bf-logo"></div>
-        <div class="bf-slogan"></div>
-      </div>
-      <p class="bottom-tips">边锋出品</p>
-    </div>
-    <!-- 进度条开始 end -->
-    <!-- 数钱层 -->
-    <div class="floor2" id="floor2">
-      <div id="back">
-        <div class="drop-money drop1"><div class="money-small"></div></div>
-        <div class="drop-money drop2"><div class="money-small"></div></div>
-        <div class="drop-money drop3"><div class="money-small"></div></div>
-        <div class="drop-money drop4"><div class="money-small"></div></div>
-        <div class="drop-money drop5"><div class="money-small"></div></div>
-        <div class="drop-money drop6"><div class="money-small"></div></div>
-      </div>
-      <div class="cal" style="z-index:20">
-        <p class="money-num" id="score">0</p>
-        <p class="time"><span id="time">15</span>秒</p>
-      </div>
-      <canvas id="mc" width="500" height="300" style="position:absolute;z-index:15">
-      抱歉，您的浏览器不支持该游戏！
-      </canvas>
-      <img id="money" class="money-big" src="i/money-bg.jpg"></img>
-      <div class="hand" id="hand2"></div>
-    </div>
-    <!-- 数钱层 end -->
-  </div>
-  <!-- 弹窗层 -->
-  <!-- 弹框1 -->
-  <div class="mask" id="mask"></div>
-  <div class="pop-area" id="pop">
-    <!-- 小红窗 -->
-    <div class="pop">
-      <span class="close" id="btnClose"></span>
-      <div class="pop-main">
-        <p class="shu">恭喜土豪，您数到了<br/>
-        </p>
-        <p class="shu" style="margin-top: 50px;">
-          <span class="yellow" id="result">0</span>元
-        </p>
-      </div>
-    </div>
-    <!-- 按钮区 -->
-    <div class="btn-area">
-      <a href="javascript:;" class="btn yellow-btn" id="btnRestart">再玩一次</a>
-      <a href="javascript:;" class="btn red-btn" id="btnShare">炫耀战绩</a>
-    </div>
-  </div>
-  <!-- 弹窗层 end -->
-  <!-- 分享层 -->
-
-  <div class="mask" id="share" style="z-index:100;opacity:.85">
-    <div class="share"></div>
-  </div>
-  <audio id="audio1" src="res/count.mp3" preload="auto"></audio>
-  <audio id="audio2" src="res/count.mp3" preload="auto"></audio>
-  <audio id="audio3" src="res/count.mp3" preload="auto"></audio>
-  <audio id="audio4" src="res/count.mp3" preload="auto"></audio>
-  <script>
-    window.oPageConfig = {
-      'aImgItems':[
-        'close.png'
-      , 'clock.png'
-      , 'f1-p.png'
-      , 'money-drop.png'
-      , 'popbg.jpg'
-      , 'f1bg.jpg'
-      , 'hand.png'
-      , 'hand2.png'
-      , 'share.png'
-      , 'money.jpg'
-      , 'f1-money.png'
-      , 'money-bg.jpg'
-      , '../images/f1-main.png'
-      ]
-    , 'oWechat': {
-        'img': 'images/f1-main.png'
-      , 'title': '边锋数钱大作战'
-      , 'desc': ''
-      }
-    , 'sPlatform': '边锋数钱游戏'
-    , 'sSoundSrc': 'http://html5.qpdiy.com/games/count_money/gametea/res/count.mp3'
-    , 'sPrefix': 'i/'
-    }
-  </script>
-  <script src="j/ori-wechat.js" ></script>
-  <script src="j/preload.js"></script>
-  <script src="j/oritent.js"></script>
-  <script src="j/game.js" ></script>
-  <script src="j/index.js" ></script>
+	<ul id="mylist">
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+	</ul>
+	<script type="text/javascript">
+		var mylist = document.getElementById("mylist");
+		document.body.addEventListener("touchmove", function(event){
+			event.preventDefault();
+		});
+	</script>
 </body>
 </html>

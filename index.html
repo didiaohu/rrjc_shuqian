@@ -61,9 +61,8 @@
 	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function(){
-		alert("window: " + $(window).height() +"; " + "document: " + $(document).height())
+		alert("window: " + $(window).height() +"; " + "document: " + $(document).height());
 		if(parseInt($(window).height()) < parseInt($(document).height()) ){
-
 			$("html,body").animate({scrollTop : $(document).height() - $(window).height()});
 		}
 	})

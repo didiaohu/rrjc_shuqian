@@ -58,11 +58,15 @@
 		<li>1</li>
 		<li>1</li>
 	</ul>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script type="text/javascript">
-		var mylist = document.getElementById("mylist");
-		document.body.addEventListener("touchmove", function(event){
-			event.preventDefault();
-		});
+	$(document).ready(function(){
+		if(parseInt($(window).height()) < parseInt($(document).height()) ){
+			$("html,body").animate({scrollTop : $(document).height() - $(window).height()});
+		}
+	})
+		
+
 	</script>
 </body>
 </html>
